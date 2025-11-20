@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>GPU-based Interval Arithmetic Multi-Objective Optimiser — Yu Wan</title>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="container">
+        <li><a href="index.html#top">Home</a></li>
+        <li><a href="index.html#work">Skills</a></li>
+        <li><a href="index.html#portfolio">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Project -->
+    <article class="wrapper style1">
+      <div class="container">
+        <header>
+          <h1>GPU-based Interval Arithmetic Multi-Objective Optimiser</h1>
+          <p>
+            Interval-based global optimisation for complete and rigorous
+            Pareto fronts in challenging test problems.
+          </p>
+        </header>
+
+        <span class="image fit">
+          <img src="images/pareto.png"
+               alt="GPU-based Interval Arithmetic Multi-Objective Optimiser" />
+        </span>
+
+        <h2>Introduction</h2>
+        <p>
+          Many real engineering problems involve conflicting objectives,
+          such as minimising weight while maximising strength. This
+          project extends interval-based optimisation to the
+          multi-objective case, targeting complete and rigorous
+          approximation of the Pareto front. The social value lies in
+          supporting better design trade-offs in high-dimensional
+          problems where traditional evolutionary algorithms struggle.
+        </p>
+
+        <h2>Methods</h2>
+        <p>
+          A benchmark multi-objective test problem with disconnected and
+          highly oscillatory Pareto fronts was reformulated using
+          interval arithmetic. Each GPU thread evaluates a sub-region of
+          the decision space and computes interval enclosures for all
+          objectives. Dominance tests between interval vectors are used
+          to discard regions that are guaranteed to be dominated, while
+          non-dominated regions are recursively refined. The
+          implementation uses shared and constant memory to reduce
+          global memory traffic and employs Latin Hypercube Sampling to
+          initialise promising regions.
+        </p>
+
+        <h2>Results</h2>
+        <p>
+          The method produced an interval approximation of the Pareto
+          front that fully covers all disconnected segments within
+          proven bounds. In contrast, reference evolutionary algorithms
+          such as NSGA-II and MOEA/D often miss parts of the front in
+          the same test problem. The resulting plots show the surviving
+          objective-space regions as yellow bands, illustrating both the
+          completeness of coverage and the remaining uncertainty width.
+        </p>
+
+        <h2>Discussion</h2>
+        <p>
+          The project shows that interval methods can complement or
+          replace stochastic multi-objective algorithms when
+          completeness and rigour are more important than obtaining a
+          single, visually smooth front. This is particularly relevant
+          in safety-critical or regulatory-driven applications where
+          decision makers require guarantees on the existence of all
+          trade-off solutions.
+        </p>
+
+        <h2>My Role</h2>
+        <p>
+          I formulated the multi-objective interval algorithm,
+          implemented all GPU kernels and data structures, and conducted
+          comparative experiments against standard evolutionary
+          algorithms including NSGA-II and MOEA/D.
+        </p>
+
+        <p>
+          <a href="index.html#portfolio" class="button">
+            &larr; Back to Projects
+          </a>
+        </p>
+      </div>
+    </article>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
+</html>
