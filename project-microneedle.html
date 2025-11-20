@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Microneedle Layout Optimisation — Yu Wan</title>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="container">
+        <li><a href="index.html#top">Home</a></li>
+        <li><a href="index.html#work">Skills</a></li>
+        <li><a href="index.html#portfolio">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Project -->
+    <article class="wrapper style1">
+      <div class="container">
+        <header>
+          <h1>Microneedle Layout Optimisation</h1>
+          <p>
+            Optimising a microneedle array layout for maximum flow while
+            respecting geometric and manufacturing constraints.
+          </p>
+        </header>
+
+        <span class="image fit">
+          <img src="images/microneedle.png"
+               alt="Microneedle Layout Optimisation" />
+        </span>
+
+        <h2>Introduction</h2>
+        <p>
+          This project focuses on optimising the layout of hollow
+          microneedles that transport blood or drugs into a microfluidic
+          chip. The goal is to maximise flow efficiency while satisfying
+          strict geometric and manufacturing constraints. The work
+          supports the development of less painful and more reliable
+          medical sampling devices.
+        </p>
+
+        <h2>Methods</h2>
+        <p>
+          A parametric CAD model of the microneedle array and connecting
+          microchannels was created. The flow behaviour was modelled
+          using Hagen–Poiseuille theory and simplified microfluidic
+          equations. SciPy&apos;s constrained trust-region optimisation
+          method (<code>trust-constr</code>) was used to tune key design
+          variables such as channel diameters, spacing, and manifold
+          geometry. Constraints ensured manufacturability, avoidance of
+          channel blockage, and compatibility with the target
+          microfluidic chip.
+        </p>
+
+        <h2>Results</h2>
+        <p>
+          The optimiser delivered a layout that satisfied all geometric
+          and manufacturing constraints while achieving a higher
+          predicted max-flow capacity than the baseline design.
+          Visualisations include 3D CAD renderings of the optimised
+          layout and labelled diagrams showing flow paths from the inlet
+          port to the microfluidic chip.
+        </p>
+
+        <h2>Discussion</h2>
+        <p>
+          By combining physics-based modelling with numerical
+          optimisation, this project demonstrates a practical workflow
+          for improving micro-scale medical devices without extensive
+          physical prototyping. The methodology can be transferred to
+          other microfluidic or biomedical layouts where flow
+          performance and geometric constraints must be balanced.
+        </p>
+
+        <h2>My Role</h2>
+        <p>
+          I built the parametric CAD model, derived the simplified flow
+          model, implemented the optimisation using SciPy, and generated
+          the final visualisations and explanatory diagrams for the
+          optimised design.
+        </p>
+
+        <p>
+          <a href="index.html#portfolio" class="button">
+            &larr; Back to Projects
+          </a>
+        </p>
+      </div>
+    </article>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
+</html>
