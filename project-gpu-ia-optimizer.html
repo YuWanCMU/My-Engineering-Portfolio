@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>GPU-based Interval Arithmetic Optimiser — Yu Wan</title>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body class="is-preload">
+
+    <!-- Nav -->
+    <nav id="nav">
+      <ul class="container">
+        <li><a href="index.html#top">Home</a></li>
+        <li><a href="index.html#work">Skills</a></li>
+        <li><a href="index.html#portfolio">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Project -->
+    <article class="wrapper style1">
+      <div class="container">
+        <header>
+          <h1>GPU-based Interval Arithmetic Optimiser</h1>
+          <p>
+            Solving large-scale highly non-convex non-linear problems
+            with rigorous guarantees on the optimum.
+          </p>
+        </header>
+
+        <span class="image fit">
+          <img src="images/gpu_solver.png"
+               alt="GPU-based Interval Arithmetic Optimiser" />
+        </span>
+
+        <h2>Introduction</h2>
+        <p>
+          This project develops a GPU-accelerated interval arithmetic
+          optimiser for highly non-convex, nonlinear engineering
+          problems. The aim is to obtain mathematically rigorous bounds
+          on the true optimum rather than approximate local solutions.
+          This is valuable for safety-critical design tasks, where
+          under-estimating stresses or failure probabilities can lead to
+          costly or dangerous outcomes.
+        </p>
+
+        <h2>Methods</h2>
+        <p>
+          Classical objective functions from structural and mechanical
+          design were reformulated using interval arithmetic so that
+          rounding errors and model uncertainty are enclosed. A
+          CUDA/Numba implementation evaluates millions of interval
+          sub-regions in parallel on the GPU. The algorithm iteratively
+          prunes regions that cannot contain the global optimum and
+          subdivides promising regions to refine the solution bounds.
+          Nsight profiling was used to tune memory access patterns and
+          thread/block configurations.
+        </p>
+
+        <h2>Results</h2>
+        <p>
+          The optimiser successfully solved benchmark non-convex
+          problems with guaranteed enclosures on the global optimum.
+          Compared with a CPU reference implementation, the GPU version
+          enabled much finer partitioning of the design space within
+          practical runtimes. The final outputs are heat-map plots of
+          surviving regions and corresponding rigorous bounds on the
+          objective.
+        </p>
+
+        <h2>Discussion</h2>
+        <p>
+          This work demonstrates that interval arithmetic, combined with
+          GPU parallelism, can deliver both rigour and scalability for
+          engineering optimisation. The approach is particularly useful
+          when design decisions must be justified with guaranteed bounds
+          instead of single approximate values.
+        </p>
+
+        <h2>My Role</h2>
+        <p>
+          I designed the optimisation algorithm, implemented all
+          CUDA/Numba kernels, carried out performance profiling,
+          and prepared the visualisations of surviving regions and
+          solution bounds.
+        </p>
+
+        <p>
+          <a href="index.html#portfolio" class="button">
+            &larr; Back to Projects
+          </a>
+        </p>
+      </div>
+    </article>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
+</html>
